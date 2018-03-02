@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.xp</groupId>
-  <artifactId>xp</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <artifactId>jstatassist</artifactId>
+  <version>0.0.1</version>
   	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -39,7 +39,7 @@
 						<configuration>
 							<classifier>agent</classifier>
 							<includes>
-								<include>vmagent/**</include>
+								<include>com/xp/agent/**</include>
 							</includes>
 							<archive>
 								<manifest>
@@ -47,7 +47,7 @@
 								</manifest>
 								<manifestEntries>
 									<Agent-Class>
-										vmagent.Main
+										com.xp.agent.main.Main
 									</Agent-Class>
 									<Can-Redefine-Classes>
 										true
@@ -65,7 +65,7 @@
 						<configuration>
 							<classifier>loadagent</classifier>
 							<includes>
-								<include>com/load/service/*</include>
+								<include>com/xp/console/*</include>
 							</includes>
 							<archive>
 								<manifest>
@@ -73,7 +73,7 @@
 								</manifest>
 								<manifestEntries>
 									<Main-Class>
-										com.load.service.Main
+										com.xp.console.Main
 									</Main-Class>
 									<Can-Redefine-Classes>
 										true
