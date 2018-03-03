@@ -15,10 +15,10 @@ public class Main {
 	public static void main(String[] args)
 			throws AttachNotSupportedException, IOException, AgentLoadException, AgentInitializationException {
 		
-		//String pid = args[0];
-		//String agentPath = args[1];
-		final String agentPath="F:\\jstatassist\\jstatassist\\jstatassist";
-		final String pid="469268";
+		final String pid = args[0];
+		final String agentPath = args[1];
+
+
 		if (pid == null) {
 			System.out.println("input pid");
 			return;
@@ -32,6 +32,7 @@ public class Main {
 				try {
 					vm = VirtualMachine.attach(pid);
 					vm.loadAgent(agentPath + "/" + jarName);
+					vm.detach();
 				}  catch (Exception e) {
 	
 					e.printStackTrace();
